@@ -146,9 +146,8 @@
 
     public function show_brands_in_loop(){
 
-      $brands_in_loop = get_option('wc_pwb_admin_tab_brands_in_loop');
-
-      if( $brands_in_loop == 'brand_link' || $brands_in_loop == 'brand_image' ){
+      $brands_in_loop = get_option('wc_pwb_admin_tab_brands_in_loop'); 
+      if( $brands_in_loop == 'brand_link' || $brands_in_loop == 'brand_image' || $brands_in_loop == 'brand_image_no_link' ){
 
         global $product;
         $product_id = $product->get_id();
@@ -165,7 +164,11 @@
               if( !empty($attachment_html) && $brands_in_loop == 'brand_image' ){
                 echo '<a href="'.$brand_link.'">'.$attachment_html.'</a>';
               }else{
-                echo '<a href="'.$brand_link.'">'.$brand->name.'</a>';
+                if ($brands_in_loop == 'brand_image_no_link') {
+                  echo $attachment_html;
+                } else {
+                  echo '<a href="'.$brand_link.'">'.$brand->name.'</a>';
+                } 
               }
             echo '</span>';
 
@@ -479,7 +482,11 @@
                     if( !empty($attachment_html) && $show_as=='brand_image' || !empty($attachment_html) && !$show_as ){
                       echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'">'.$attachment_html.'</a>';
                     }else{
-                      echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'">'.$brand->name.'</a>';
+                      if ($show_as == 'brand_image_no_link') { 
+                        echo $attachment_html;
+                      } else {
+                        echo '<a href="'.$brand_link.'" title="'.__( 'View brand', 'perfect-woocommerce-brands' ).'">'.$brand->name.'</a>';
+                      } 
                     }
                 }
                 echo '</div>';

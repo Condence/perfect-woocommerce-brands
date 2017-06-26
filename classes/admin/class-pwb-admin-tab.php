@@ -98,7 +98,8 @@
                     'options' => array(
                       'no'           => __( 'No', 'perfect-woocommerce-brands' ),
                       'brand_link'   => __( 'Show brand link', 'perfect-woocommerce-brands' ),
-                      'brand_image'  => __( 'Show brand image (if is set)', 'perfect-woocommerce-brands' )
+                      'brand_image'  => __( 'Show brand image (if is set)', 'perfect-woocommerce-brands' ),
+                      'brand_image_no_link'  => __( 'Show brand image without link (if is set)', 'perfect-woocommerce-brands' )
                     )
                 ),
                 'show_brand_in_single' => array(
@@ -111,7 +112,8 @@
                     'options' => array(
                       'no'           => __( 'No', 'perfect-woocommerce-brands' ),
                       'brand_link'   => __( 'Show brand link', 'perfect-woocommerce-brands' ),
-                      'brand_image'  => __( 'Show brand image (if is set)', 'perfect-woocommerce-brands' )
+                      'brand_image'  => __( 'Show brand image (if is set)', 'perfect-woocommerce-brands' ),
+                      'brand_image_no_link'  => __( 'Show brand image without link (if is set)', 'perfect-woocommerce-brands' )
                     )
                 ),
                 'brand_logo_size' => array(
